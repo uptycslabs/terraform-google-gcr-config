@@ -45,13 +45,14 @@ module "gcr-config" {
 
 ## Inputs
 
-| Name                   | Description                                                           | Type     | Required |
-| ---------------------  | --------------------------------------------------------------------- | -------- | -------- |
-| uptycs_aws_account_id  | Aws account id of Uptycs                                              | `string` | Yes      |
-| gcp_project_id         | Role external ID provided by Uptycs. Copy the UUID ID from Uptycs' UI | `string` | Yes      |
-| integration_name       | A unique name for this GCP - uptycs integration                       | `string` | Yes      |
-| service_account_name   | The name of the GCP service account to use for authentication         | `string` |          |
-| service_account_exists | A boolean value indicating whether the service account already exists | `bool`   |          |
+| Name                      | Description                                                              | Type     | Required |
+| ------------------------  | ------------------------------------------------------------------------ | -------- | -------- |
+| uptycs_aws_account_id     | Aws account id of Uptycs                                                 | `string` | Yes      |
+| uptycs_aws_instance_roles | Instances roles to be specified as the Workload Identity Binding members | `array`  | Yes      |
+| gcp_project_id            | Role external ID provided by Uptycs. Copy the UUID ID from Uptycs' UI    | `string` | Yes      |
+| integration_name          | A unique name for this GCP - uptycs integration                          | `string` | Yes      |
+| service_account_name      | The name of the GCP service account to use for authentication            | `string` |          |
+| service_account_exists    | A boolean value indicating whether the service account already exists    | `bool`   |          |
 
 
 ## Outputs
