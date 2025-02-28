@@ -11,6 +11,7 @@ This terraform module will create the following resources:
 In addition to these resources, the newly created service account will have the following roles attached to it:
 - roles/artifactregistry.reader
 - roles/iam.serviceAccountTokenCreator
+If gcr_integration is true, the following role will also be attached:
 - roles/storage.objectViewer
 
 ## Prerequisites
@@ -53,6 +54,7 @@ module "gcr-config" {
 | integration_name          | A unique name for this GCP - uptycs integration                          | `string` | Yes      |
 | service_account_name      | The name of the GCP service account to use for authentication            | `string` |          |
 | service_account_exists    | A boolean value indicating whether the service account already exists    | `bool`   |          |
+| gcr_integration           | Enable legacy GCR integration (default false)                            | `bool`   |          |
 
 
 ## Outputs
