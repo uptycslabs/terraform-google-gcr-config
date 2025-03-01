@@ -33,3 +33,9 @@ variable "service_account_name" {
   type        = string
   description = "The GCP service account name, If a service account with this name already exists, then be sure to set service_account_exists=true"
 }
+
+variable "gcr_integration" {
+  type        = bool
+  default     = false
+  description = "Set to true to enable legacy GCR integration."
+}

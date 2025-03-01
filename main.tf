@@ -56,6 +56,7 @@ resource "google_project_iam_member" "bind_iam_service_account_token_creator" {
 }
 
 resource "google_project_iam_member" "bind_storage_object_viewer" {
+  count     = var.gcr_integration ? 1 : 0
   role    = "roles/storage.objectViewer"
   project = var.gcp_project_id
   member  = var.service_account_exists == false ? "serviceAccount:${google_service_account.uptycs_gcr_integration[0].email}" : "serviceAccount:${data.google_service_account.main_account[0].email}"
