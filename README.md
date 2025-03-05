@@ -14,6 +14,13 @@ In addition to these resources, the newly created service account will have the 
 If gcr_integration is true, the following role will also be attached:
 - roles/storage.objectViewer
 
+## Organization-level Integration
+
+If you need to configure GCR monitoring at the organization level (across all projects), use the [organization module](./organization/README.md) instead. The organization module grants IAM roles at the organization level rather than the project level.
+
+The organization module now supports granting permissions to specific projects instead of the entire organization by using the `registry_projects` variable. This allows for more granular control over which projects the service account can access.
+
+
 ## Prerequisites
 
 - Minimum required version of Terraform -> v0.13
