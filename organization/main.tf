@@ -39,10 +39,6 @@ resource "google_service_account" "uptycs_gcr_integration" {
   description  = "Uptycs GCR Service Account Intergration"
 }
 
-resource "google_service_account_key" "uptycs_gcr_integration_key" {
-  service_account_id = var.service_account_exists == false ? google_service_account.uptycs_gcr_integration[0].name : data.google_service_account.main_account[0].name
-}
-
 resource "google_organization_iam_member" "bind_artifact_registry_reader" {
   org_id =  var.org_id  
   role    = "roles/artifactregistry.reader"
